@@ -37,8 +37,8 @@ const createWindow = () => {
     mainWindow.webContents.send('chat', message.toString());
   })
 
-  // mainWindow.setIgnoreMouseEvents(true);
-  // mainWindow.maximize();
+  mainWindow.setIgnoreMouseEvents(true);
+  mainWindow.maximize();
 };
 
 // This method will be called when Electron has finished
