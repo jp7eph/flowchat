@@ -69,7 +69,7 @@ function connect_mqtt() {
   const mqtt = require('mqtt');
   const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
 
-  const connectUrl = `mqtt://localhost:1883`
+  const connectUrl = `mqtts://test.mosquitto.org:8883`
 
   const options = {
     keepalive: 30,
@@ -103,7 +103,7 @@ function connect_mqtt() {
 
   client.on('connect', () => {
     // console.log('Client connected:' + clientId)
-    client.subscribe('testtopic', {
+    client.subscribe('techin/techin15', {
       qos: 0
     })
     // client.publish('testtopic/electron', 'Electron connection demo...!', {
