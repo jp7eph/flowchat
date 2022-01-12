@@ -1,0 +1,18 @@
+{
+    "name": "flowchaat",
+    "version": "0.1.0",
+    "manifest_version": 3,
+    "description": "Zoom chat sent to MQTT broker",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.zoom.us/*"
+            ],
+            "js": [
+                "jquery-3.6.0.min.js",
+                "mqtt.min.js",
+                "content-script.js"
+            ]
+        }
+    ]
+}
