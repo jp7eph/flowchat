@@ -8,8 +8,8 @@ function event_chat() {
             tmp_div.innerHTML = inner_html;
 
             var chat_message = tmp_div.getElementsByClassName('chat-message__text-box')[0].innerText
-            console.log(chat_message);
             pub_mqtt(chat_message);
+            console.log('send message: '+chat_message);
         }
     });
 
@@ -29,12 +29,8 @@ function event_chat() {
 
 var client
 function connect_mqtt() {
-    // const options = {
-    //     username: 'token:6rR6lmQdFKbJoU8h',
-    //     password: '',
-    // }
-    // client = mqtt.connect('mqtt://mqtt.beebotte.com:1883',options);
-    client = mqtt.connect('wss://test.mosquitto.org:8081');
+    client = mqtt.connect('wss://mqtt.techin.jp7eph.net:8083');
+    console.log('success connect to mqtt server on websocket');
 }
 connect_mqtt();
 

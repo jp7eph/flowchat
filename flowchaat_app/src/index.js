@@ -31,7 +31,7 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   mqtt_client.on('message', (_topic, message, _packet) => {
     mainWindow.webContents.send('chat', message.toString());
@@ -69,8 +69,7 @@ function connect_mqtt() {
   const mqtt = require('mqtt');
   const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
 
-  const connectUrl = `mqtts://test.mosquitto.org:8883`
-
+  const connectUrl = `mqtts://mqtt.techin.jp7eph.net:8883`
   const options = {
     keepalive: 30,
     clientId: clientId,
@@ -89,7 +88,6 @@ function connect_mqtt() {
   }
 
   // Information about the mqtt module is available
-  // console.log('connecting mqtt client')
   const client = mqtt.connect(connectUrl, options)
 
   client.on('error', (err) => {
@@ -102,18 +100,10 @@ function connect_mqtt() {
   })
 
   client.on('connect', () => {
-    // console.log('Client connected:' + clientId)
     client.subscribe('techin/techin15', {
       qos: 0
     })
-    // client.publish('testtopic/electron', 'Electron connection demo...!', {
-    //   qos: 0,
-    //   retain: false
-    // })
   })
 
-  // client.on('message', (topic, message, packet) => {
-  //   // console.log('Received Message: ' + message.toString() + '\nOn topic: ' + topic)
-  // })
   return client
 }
