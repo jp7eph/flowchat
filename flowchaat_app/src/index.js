@@ -25,6 +25,7 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     },
+    skipTaskbar: true,
   });
 
   // and load the index.html of the app.
@@ -43,19 +44,19 @@ const createWindow = () => {
 
 // トレイアイコンを生成する
 let tray = null;
-const createTrayIcon = () => {
+app.whenReady().then(() => {
   let imgFilePath;
   // Windows
   if (process.platform === 'win32') {
-    imgFilePath = path.dirname(path.basename(__dirname)) + '/assets/tasktray_icon/flowchaat_tasktray.ico';
+    imgFilePath = __dirname + '/assets/win/flowchaat.ico';
   }
   // macOS
   else {
-    imgFilePath = path.dirname(path.basename(__dirname)) + '/assets/tasktray_icon/flowchaat_tasktray_mac.png';
+    imgFilePath = __dirname + '/assets/mac/flowchaat_tasktray_mac.png';
     // ダークテーマ対応
     if (nativeTheme.shouldUseDarkColors === true) {
       isDarkTheme = true;
-      imgFilePath = path.dirname(path.basename(__dirname)) + '/assets/tasktray_icon/flowchaat_tasktray_mac_dark.png';
+      imgFilePath = __dirname + '/assets/mac/flowchaat_tasktray_mac_dark.png';
     }
   }
   const contextMenu = Menu.buildFromTemplate([
@@ -64,15 +65,12 @@ const createTrayIcon = () => {
   tray = new Tray(imgFilePath);
   tray.setToolTip(app.name);
   tray.setContextMenu(contextMenu);
-}
+})
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', () => {
-  createWindow();
-  createTrayIcon();
-});
+app.on('ready', () => { createWindow() });
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
