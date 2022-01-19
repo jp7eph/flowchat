@@ -24,34 +24,14 @@ ping mqtt.techin.jp7eph.net
 
 ### アプリ実行方法
 
-#### for Windows
+各OSの操作マニュアルは以下のページを参照のこと。
 
-1. ダウンロードしたZIPを解凍し、 `flowchaat.exe` を実行する。
-1. 実行時に下記ダイアログが表示された場合は `詳細情報` を選択し、 `実行` を選択する。
-1. アプリが起動する。
+- [Windowsユーザ向け操作マニュアル](./docs/windows-install.md)
 
-![win実行時警告画面1](https://github.com/jp7eph/flowchaat/blob/images/win_exec_warn_dialog.png)
-![win実行時警告画面2](https://github.com/jp7eph/flowchaat/blob/images/win_exec_option.png)
-
-#### for Mac
-
-1. ダウンロードしたZIPを解凍し、 `flowchaat` を実行する。
-1. 実行時に下記エラーが表示された場合は、 `システム環境設定 > セキュリティーとプライバシー` から `このまま開く` を選択する。
-1. アプリが起動する。
-
-![mac実行時警告画面](https://github.com/jp7eph/flowchaat/blob/images/mac_exec_warn_dialog.png)
-![macセキュリティオプション](https://github.com/jp7eph/flowchaat/blob/images/mac_security_option.png)
+- [Macユーザ向け操作マニュアル](./docs/mac-install.md)
 
 ### 動作確認方法
 
 **2022/1/25 23:59(日本時間)** までテスト字幕が流れるようにしています。
 
 アプリを起動して `こちらはテスト字幕です` という文字が画面上を流れればOK。
-
-### アプリ終了方法
-
-タスクバーにあるアイコン(吹き出しが3つ重なったアイコン) を右クリックし、 `終了` を選択する。
-
-### アンインストール方法
-
-レジストリ等に登録していないため、ダウンロードしたZIPファイルを削除するだけ。
