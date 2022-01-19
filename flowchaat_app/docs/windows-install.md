@@ -6,8 +6,7 @@
 1. 実行時に下記ダイアログが表示された場合は `詳細情報` を選択し、 `実行` を選択する。
 1. アプリが起動する。
 
-![win実行時警告画面1](https://github.com/jp7eph/flowchaat/blob/images/win_exec_warn_dialog.png)
-![win実行時警告画面2](https://github.com/jp7eph/flowchaat/blob/images/win_exec_option.png)
+![win実行時警告画面](https://github.com/jp7eph/flowchaat/blob/images/win_exec_warn_dialog.png)
 
 ### アプリ終了方法
 

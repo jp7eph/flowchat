@@ -7,7 +7,6 @@
 1. アプリが起動する。
 
 ![mac実行時警告画面](https://github.com/jp7eph/flowchaat/blob/images/mac_exec_warn_dialog.png)
-![macセキュリティオプション](https://github.com/jp7eph/flowchaat/blob/images/mac_security_option.png)
 
 ### アプリ終了方法
 
