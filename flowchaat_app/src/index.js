@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, Tray } = require('electron');
+const { app, BrowserWindow, Menu, Tray, nativeTheme } = require('electron');
 const { MqttClient } = require('mqtt');
 const path = require('path')
 
@@ -45,11 +45,18 @@ const createWindow = () => {
 let tray = null;
 const createTrayIcon = () => {
   let imgFilePath;
-  if (process.platform === 'win32') { // Windows
+  // Windows
+  if (process.platform === 'win32') {
     imgFilePath = path.dirname(path.basename(__dirname)) + '/assets/tasktray_icon/flowchaat_tasktray.ico';
   }
-  else{ // macOS
-    imgFilePath = path.dirname(path.basename(__dirname)) + '/assets/tasktray_icon/flowchaat_tasktray.png';
+  // macOS
+  else {
+    imgFilePath = path.dirname(path.basename(__dirname)) + '/assets/tasktray_icon/flowchaat_tasktray_mac.png';
+    // ダークテーマ対応
+    if (nativeTheme.shouldUseDarkColors === true) {
+      isDarkTheme = true;
+      imgFilePath = path.dirname(path.basename(__dirname)) + '/assets/tasktray_icon/flowchaat_tasktray_mac_dark.png';
+    }
   }
   const contextMenu = Menu.buildFromTemplate([
     { label: '終了', role: 'quit' }
