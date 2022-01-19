@@ -6,7 +6,7 @@ Zoomのコメントをニコ○○動画風にデスクトップ上に透過表�
 
 ![構成図](https://github.com/jp7eph/flowchaat/blob/images/flowchaat_diam.png)
 
-## 使い方
+## 使用方法
 
 ### 動作環境・前提
 
@@ -18,10 +18,29 @@ pingコマンドによる疎通性確認方法
 ping mqtt.techin.jp7eph.net
 ```
 
-### ダウンロード〜アプリ起動
+### ダウンロード
 
 1. [リリースページ](https://github.com/jp7eph/flowchaat/releases) から最新のリリースを参照し、自分のOSに合わせたZIPファイルをダウンロードする。
-1. ダウンロードしたZIPを解凍し、その中にある `flowchaat` (Windowsの場合は `flowchaat.exe`) を実行する。
+
+### アプリ実行方法
+
+#### for Windows
+
+1. ダウンロードしたZIPを解凍し、 `flowchaat.exe` を実行する。
+1. 実行時に下記ダイアログが表示された場合は `詳細情報` を選択し、 `実行` を選択する。
+1. アプリが起動する。
+
+![win実行時警告画面1](https://github.com/jp7eph/flowchaat/blob/images/win_exec_warn_dialog.png)
+![win実行時警告画面2](https://github.com/jp7eph/flowchaat/blob/images/win_exec_option.png)
+
+#### for Mac
+
+1. ダウンロードしたZIPを解凍し、 `flowchaat` を実行する。
+1. 実行時に下記エラーが表示された場合は、 `システム環境設定 > セキュリティーとプライバシー` から `このまま開く` を選択する。
+1. アプリが起動する。
+
+![mac実行時警告画面](https://github.com/jp7eph/flowchaat/blob/images/mac_exec_warn_dialog.png)
+![macセキュリティオプション](https://github.com/jp7eph/flowchaat/blob/images/mac_security_option.png)
 
 ### 動作確認方法
 
