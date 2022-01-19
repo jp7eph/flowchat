@@ -21,7 +21,7 @@ ping mqtt.techin.jp7eph.net
 ### ダウンロード〜実行
 
 1. [リリースページ](https://github.com/jp7eph/flowchaat/releases) から最新のリリースを参照し、自分のOSに合わせたZIPファイルをダウンロードする。
-1. ダウンロードしたZIPを解答し、その中にある `flowchaat` (Windowsの場合は `flowchaat.exe`) を実行する。
+1. ダウンロードしたZIPを解凍し、その中にある `flowchaat` (Windowsの場合は `flowchaat.exe`) を実行する。
 
 ### 動作確認方法
 
@@ -30,3 +30,5 @@ ping mqtt.techin.jp7eph.net
 アプリを起動して `こちらはテスト字幕です` という文字が画面上を流れればOK。
 
 ### アプリ終了方法
+
+タスクバーにあるアイコン(吹き出しが3つ重なったアイコン) を右クリックし、 `終了` を選択する。
