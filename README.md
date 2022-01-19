@@ -26,9 +26,9 @@ ping mqtt.techin.jp7eph.net
 
 各OSの操作マニュアルは以下のページを参照のこと。
 
-- [Windowsユーザ向け操作マニュアル](./docs/windows-install.md)
+- [Windowsユーザ向け操作マニュアル](./flowchaat_app/docs/windows-install.md)
 
-- [Macユーザ向け操作マニュアル](./docs/mac-install.md)
+- [Macユーザ向け操作マニュアル](./flowchaat_app/docs/mac-install.md)
 
 ### 動作確認方法
 
