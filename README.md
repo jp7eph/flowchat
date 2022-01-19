@@ -6,7 +6,7 @@ Zoomのコメントをニコ○○動画風にデスクトップ上に透過表�
 
 ![構成図](https://github.com/jp7eph/flowchaat/blob/images/flowchaat_diam.png)
 
-## 使い方
+## 使用方法
 
 ### 動作環境・前提
 
@@ -18,21 +18,20 @@ pingコマンドによる疎通性確認方法
 ping mqtt.techin.jp7eph.net
 ```
 
-### ダウンロード〜アプリ起動
+### ダウンロード
 
 1. [リリースページ](https://github.com/jp7eph/flowchaat/releases) から最新のリリースを参照し、自分のOSに合わせたZIPファイルをダウンロードする。
-1. ダウンロードしたZIPを解凍し、その中にある `flowchaat` (Windowsの場合は `flowchaat.exe`) を実行する。
+
+### アプリ実行方法
+
+各OSの操作マニュアルは以下のページを参照のこと。
+
+- [Windowsユーザ向け操作マニュアル](./flowchaat_app/docs/windows-install.md)
+
+- [Macユーザ向け操作マニュアル](./flowchaat_app/docs/mac-install.md)
 
 ### 動作確認方法
 
 **2022/1/25 23:59(日本時間)** までテスト字幕が流れるようにしています。
 
 アプリを起動して `こちらはテスト字幕です` という文字が画面上を流れればOK。
-
-### アプリ終了方法
-
-タスクバーにあるアイコン(吹き出しが3つ重なったアイコン) を右クリックし、 `終了` を選択する。
-
-### アンインストール方法
-
-レジストリ等に登録していないため、ダウンロードしたZIPファイルを削除するだけ。
