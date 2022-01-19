@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu, Tray, nativeTheme } = require('electron');
 const { MqttClient } = require('mqtt');
 const path = require('path')
 
@@ -41,10 +41,38 @@ const createWindow = () => {
   mainWindow.maximize();
 };
 
+// トレイアイコンを生成する
+let tray = null;
+const createTrayIcon = () => {
+  let imgFilePath;
+  // Windows
+  if (process.platform === 'win32') {
+    imgFilePath = path.dirname(path.basename(__dirname)) + '/assets/tasktray_icon/flowchaat_tasktray.ico';
+  }
+  // macOS
+  else {
+    imgFilePath = path.dirname(path.basename(__dirname)) + '/assets/tasktray_icon/flowchaat_tasktray_mac.png';
+    // ダークテーマ対応
+    if (nativeTheme.shouldUseDarkColors === true) {
+      isDarkTheme = true;
+      imgFilePath = path.dirname(path.basename(__dirname)) + '/assets/tasktray_icon/flowchaat_tasktray_mac_dark.png';
+    }
+  }
+  const contextMenu = Menu.buildFromTemplate([
+    { label: '終了', role: 'quit' }
+  ]);
+  tray = new Tray(imgFilePath);
+  tray.setToolTip(app.name);
+  tray.setContextMenu(contextMenu);
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', () => {
+  createWindow();
+  createTrayIcon();
+});
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
