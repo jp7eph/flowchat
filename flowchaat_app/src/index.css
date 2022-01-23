@@ -13,12 +13,15 @@
     margin: 0;
     display: inline-block; 
     white-space: nowrap;
-    animation-name: marquee; /*アニメーションのクラス名*/
-    animation-timing-function: linear;
-    animation-duration: 5s; /*アニメーションの速度*/
-    display: inline-block;
-    position: fixed;
 
+    /* アニメーション設定 */
+    animation-name: marquee;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    display: inline-block;
+    position:absolute;
+
+    /* フォント設定 */
     font-size: 8vh;
     font-weight: bold;
     color: #FFF;
