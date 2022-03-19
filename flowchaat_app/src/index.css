@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 #container{
-    height: 95vh;
+    height: 98vh;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -15,20 +15,23 @@
     white-space: nowrap;
 
     /* アニメーション設定 */
-    animation-name: marquee;
+    animation-name: flow;
     animation-timing-function: linear;
     animation-duration: 5s;
     display: inline-block;
-    position:absolute;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow:hidden;
 
     /* フォント設定 */
-    font-size: 8vh;
-    font-weight: bold;
+    /* font-size: 8vh; */
+    /* font-weight: bold; */
     color: #FFF;
-    -webkit-text-stroke: 2px #000;
+    /* -webkit-text-stroke: 2px #000; */
 }
 
-@keyframes marquee {
+@keyframes flow {
     from   { left: 100%;} 
     99%,to { left: -100%;}
 }
