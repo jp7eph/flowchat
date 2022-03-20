@@ -41,7 +41,7 @@ ping mqtt.techin.jp7eph.net
 ```console
 .
 ├── chrome_extension        // チャットリレー機能 Chrome拡張機能
-└── flowchaat_app           // コメント透過表示のデスクトップアプリ
+└── flowchaat_app           // チャット投影アプリ
     ├── docs 
     ├── flowchaat.iconset   // アイコンセット
     └── src
