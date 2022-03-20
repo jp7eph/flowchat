@@ -1,1 +1,37 @@
 @charset "UTF-8";
+
+#container{
+    height: 98vh;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+#container p {
+    left: 100%;
+    margin: 0;
+    display: inline-block; 
+    white-space: nowrap;
+
+    /* アニメーション設定 */
+    animation-name: flow;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    display: inline-block;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow:hidden;
+
+    /* フォント設定 */
+    font-size: 6vh;
+    font-weight: bold;
+    color: #FFF;
+    -webkit-text-stroke: 2px #000;
+}
+
+@keyframes flow {
+    from   { left: 100%;} 
+    99%,to { left: -100%;}
+}
