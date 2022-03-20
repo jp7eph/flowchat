@@ -33,19 +33,28 @@ function observe_window() {
     chat_observer.observe(elem, config);
 }
 
+// ブローカー送信済み済のメッセージを格納する。keyはid, valueはメッセージ内容。
+var messages = [];
+
 function observe_chat() {
-    var chat_observer = new MutationObserver(function (mutation) {
+    var chat_observer = new MutationObserver(function (mutations) {
         // DOMの変化が起こった時の処理
         // チャットするとaddNodesとremoveNodesどちらのイベントもフックされるため、addNodesだけの場合処理。
-        if (mutation[0].addedNodes.length > 0) {
-            var inner_html = mutation[0].addedNodes[0].innerHTML;
-            var tmp_div = document.createElement('div');
-            tmp_div.innerHTML = inner_html;
-
-            var chat_message = tmp_div.getElementsByClassName('chat-message__text-box')[0].innerText
-            pub_mqtt(chat_message);
-            console.log('flowchaat: send message: ' + chat_message);
-        }
+        mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+                // getByClassNameしたオブジェクトはそのままforEachできないのでArrayに入れる。
+                messageContainers = Array.from(node.getElementsByClassName('chat-message__text-box'));
+                messageContainers.forEach(element => {
+                    // idありなしのnodeが生成されるので、idがあるnodeのみ処理対象にする。
+                    if (element.id != '' && !messages[element.id]) {
+                        pub_mqtt(element.innerText)
+                        console.log('flowchaat: send message: ' + element.innerText);
+                        // 送信が終わったら格納。
+                        messages[element.id] = element.innerText
+                    }
+                });
+            });
+        });
     });
 
     // 監視対象の要素オブジェクト
