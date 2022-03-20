@@ -12,7 +12,7 @@ async function flow_chat(text) {
   // 初期状態の横方向の位置は画面の右端に設定
   p_element.style.left = (document.documentElement.clientWidth) + 'px';
   // 縦位置を画面外にはみ出さないように85%に丸め込む。
-  var random = (Math.round(Math.random() * document.documentElement.clientHeight)) * 0.9;
+  var random = (Math.round(Math.random() * document.documentElement.clientHeight)) * 0.85;
   p_element.style.top = random + 'px';
 
   p_element.appendChild(document.createTextNode(text));
