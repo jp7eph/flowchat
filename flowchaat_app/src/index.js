@@ -32,7 +32,7 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   mqtt_client.on('message', (_topic, message, _packet) => {
     mainWindow.webContents.send('chat', message.toString());
