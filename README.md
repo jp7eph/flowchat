@@ -1,16 +1,14 @@
 # flowchaat
 
-Zoomのコメントをニコ○○動画風にデスクトップ上に透過表示するアプリ一式
+Zoomのミーティングチャットをニコ○○動画風にデスクトップ上に透過表示するアプリ一式
 
 ## 構成図
 
 ![構成図](https://github.com/jp7eph/flowchaat/blob/images/flowchaat_diam.png)
 
-## 使用方法
+## 動作環境・前提
 
-### 動作環境・前提
-
-- WindowsまたはmacOSの私有PCであること。会社PCは動作保証外であるとともに一切の責任を負いません。
+- macOSまたはWindows環境の私有PCであること。会社PCは動作保証外であるとともに一切の責任を負いません。
 - 公開MQTTブローカ `mqtt.techin.jp7eph.net` に対して疎通性があること。プロキシ環境下は動作保証外。
 
 pingコマンドによる疎通性確認方法
@@ -19,20 +17,32 @@ pingコマンドによる疎通性確認方法
 ping mqtt.techin.jp7eph.net
 ```
 
-### ダウンロード
+## ダウンロード
 
-1. [リリースページ](https://github.com/jp7eph/flowchaat/releases) から最新のリリースを参照し、自分のOSに合わせたZIPファイルをダウンロードする。
+[リリースページ](https://github.com/jp7eph/flowchaat/releases) から最新のリリースを参照し、自分のOSに合わせたZIPファイルをダウンロードする。
 
-### アプリ実行方法
+- Mac(x64): `flowchaat-mac-x64-x.x.x.zip`
+- Win(x64): `flowchaat-win-x64-x.x.x.zip`  
+※ `x.x.x` はリリースバージョンが入る。
 
-各OSの操作マニュアルは以下のページを参照のこと。
+## マニュアル
 
-- [Windowsユーザ向け操作マニュアル](./flowchaat_app/docs/windows-install.md)
+各OSでの操作マニュアルは以下のページを参照のこと。
 
 - [Macユーザ向け操作マニュアル](./flowchaat_app/docs/mac-install.md)
+- [Windowsユーザ向け操作マニュアル](./flowchaat_app/docs/windows-install.md)
 
-### 動作確認方法
+## ディレクトリ構成
 
-**2022/1/25 23:59(日本時間)** までテスト字幕が流れます。
-
-アプリを起動して `こちらはテスト字幕です` という文字が画面上を流れればOK。
+<!--
+    treeコマンド実行時は ./out と ./node_modules を除外する。
+    tree -d -L 2 -I out -I node_modules
+ -->
+```console
+.
+├── chrome_extension        // チャットリレー機能 Chrome拡張機能
+└── flowchaat_app           // コメント透過表示のデスクトップアプリ
+    ├── docs 
+    ├── flowchaat.iconset   // アイコンセット
+    └── src
+```
